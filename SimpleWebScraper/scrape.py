@@ -4,14 +4,14 @@ from bs4 import BeautifulSoup
 from string import ascii_uppercase
 
 
-f = csv.writer(open('artist-names.csv', 'w'))
-f.writerow(['Name', 'Nationality', 'Link'])
+f = csv.writer(open('artist-db.csv', 'w'))
+f.writerow(['Name', 'Nationality', 'Years', 'Link'])
 
-pages = ['https://web.archive.org/web/20121007172955/https://www.nga.gov/collection/anZ1.htm']
+pages = []
 
-#for c in ascii_uppercase:
-#    url = 'https://web.archive.org/web/20121007172955/https://www.nga.gov/collection/an' + c + '1.htm'
-#    pages.append(url)
+for c in ascii_uppercase:
+    url = 'https://web.archive.org/web/20121007172955/https://www.nga.gov/collection/an' + c + '1.htm'
+    pages.append(url)
 
 
 for item in pages:
@@ -21,21 +21,31 @@ for item in pages:
     last_links = soup.find(class_='AlphaNav')
     last_links.decompose()
 
-    artist_name_list = soup.find(class_='BodyText')
-    artist_info = artist_name_list.find_all('td')
-
-    print("1:  " + str(artist_info[0]))
-    print("2:  " + str(artist_info[1]))
-    print("3:  " + str(artist_info[2]))
-    print("4:  " + str(artist_info[3]))
-    print("5:  " + str(artist_info[4]))
-    print("6:  " + str(artist_info[5]))
-
+    artist_list = soup.find(class_='BodyText')
+    artist_info = artist_list.find_all('td')
 
     index = 0
-    while index < len(artist_info):
-        name = artist_info[index+1]
-        nationality = artist_info[index+2]
-        link = 'https"//web.archive.org' + artist_info[index].get('href')
-        f.writerow([name, nationality, link])
-        index += 3
+    while index < len(artist_info)-2:
+        name = artist_info[index].string
+
+        nation = ""
+        years = ""
+        nation_and_years_str = str(artist_info[index+1].string)
+        if nation_and_years_str == "None":
+            nation = "NA"
+            years = "NA"
+        elif nation_and_years_str != "":
+            if ',' in nation_and_years_str:
+                nation_and_years = [x.strip() for x in nation_and_years_str.split(',')]
+                nation = nation_and_years[0]
+                years = nation_and_years[1]
+            elif '1' in nation_and_years_str:
+                years = nation_and_years_str
+            else:
+                nation = nation_and_years_str
+        
+        artist_link = artist_info[index].find('a')
+        link = 'https://web.archive.org' + artist_link.get('href')
+        
+        f.writerow([name, nation, years, link])
+        index += 2
