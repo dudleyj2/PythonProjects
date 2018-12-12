@@ -10,8 +10,21 @@ f.writerow(['Name', 'Nationality', 'Years', 'Link'])
 pages = []
 
 for c in ascii_uppercase:
-    url = 'https://web.archive.org/web/20121007172955/https://www.nga.gov/collection/an' + c + '1.htm'
-    pages.append(url)
+    i = 1
+    http_status = True
+    while(http_status):
+        url = 'https://web.archive.org/web/20121007172955/https://www.nga.gov/collection/an' + c + str(i) + '.htm'
+        current_page = requests.get(url)
+
+        print(str(c) + " " + str(i))
+
+        # continue if we get a 200 response code
+        if current_page.status_code is 200:
+            pages.append(url)
+        else:
+            http_status = False
+        i += 1
+
 
 
 for item in pages:
