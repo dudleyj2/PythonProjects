@@ -14,4 +14,4 @@ These are solutions for the Advent of Code problems of 2018.
 
 ## Author
 
-* **Jimmy Dudley** - [Website](jimmydudley.com) - [email](dudleyj2@miamioh.edu)
+* **Jimmy Dudley** - [Website](http://jimmydudley.com) - [email](dudleyj2@miamioh.edu)
