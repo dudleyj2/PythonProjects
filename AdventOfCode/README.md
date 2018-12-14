@@ -9,7 +9,9 @@ These are solutions for the Advent of Code problems of 2018.
 
 ## More Information
 
-* **Advent of Code** - [http://adventofcode.com/]
+* **Advent of Code** - [Website](http://adventofcode.com/)
+
+
 ## Author
 
-* **Jimmy Dudley** - [dudleyj2@miamioh.edu]
+* **Jimmy Dudley** - [Website](jimmydudley.com) - [email](dudleyj2@miamioh.edu)
