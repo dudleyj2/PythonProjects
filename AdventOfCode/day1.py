@@ -1,4 +1,4 @@
-# Advent of Code Challenge
+# Advent of Code Challenge Day 1
 
 
 def main():
