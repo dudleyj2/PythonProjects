@@ -1,10 +1,12 @@
-import requests
 import csv
+import time
+import requests
+
 from bs4 import BeautifulSoup
 from string import ascii_uppercase
 
 
-f = csv.writer(open('artist-db.csv', 'w'))
+f = csv.writer(open('artist-db.csv', 'w', newline=''))
 f.writerow(['Name', 'Nationality', 'Years', 'Link'])
 
 pages = []
@@ -22,6 +24,7 @@ for c in ascii_uppercase:
         else:
             http_status = False
         i += 1
+        time.sleep(2)
 
 
 for item in pages:
