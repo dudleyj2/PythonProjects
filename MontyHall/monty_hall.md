@@ -140,6 +140,11 @@ Success rate for switching: 2/3
 
 Run the python script to see if it's true!
 
+Sample output for the lazy:
+```python
+Door 'A' Success Rate: 0.33447
+Switch Door Success Rate: 0.66553
+```
 
 ## Author
 
