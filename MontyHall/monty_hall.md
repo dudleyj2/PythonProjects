@@ -121,19 +121,21 @@ Let's try one last, involving each of the three possibilities for where the car 
    * Contestant does not switch: **WINNER**
    * Contestant switches to door C (only remaining door): *LOSER*
 
-2. The car is behind door B
+ 2. The car is behind door B
    * Door A is chosen by the candidate
    * The host reveals the contents of door C (cannot reveal door B because of Rule 3)
    * Contestant does not switch: *LOSER*
    * Contestant switches to door B (only remaining door): **WINNER**
 
-3. The car is behind door C
+ 3. The car is behind door C
    * Door A is chosen by the candidate
    * The host reveals the contents of door B (cannot reveal door C because of Rule 3)
    * Contestant does not switch: *LOSER*
    * Contestant switches to door C (only remaining door): **WINNER**
 
+
 Success rate for not switching: 1/3
+
 Success rate for switching: 2/3
 
 ∴ the contestant is twice as likely to win if they switch doors.
