@@ -118,29 +118,28 @@ Let's try one last, involving each of the three possibilities for where the car 
  1. The car is behind door A
    * Door A is chosen by the candidate
    * The host reveals the contents of door B or C (let's say B)
-   * Contestant does not switch: **WINNER**
-   * Contestant switches to door C (only remaining door): *LOSER*
+     * Contestant does not switch: **WINNER**
+     * Contestant switches to door C (only remaining door): *LOSER*
 
  2. The car is behind door B
    * Door A is chosen by the candidate
    * The host reveals the contents of door C (cannot reveal door B because of Rule 3)
-   * Contestant does not switch: *LOSER*
-   * Contestant switches to door B (only remaining door): **WINNER**
+     * Contestant does not switch: *LOSER*
+     * Contestant switches to door B (only remaining door): **WINNER**
 
  3. The car is behind door C
    * Door A is chosen by the candidate
    * The host reveals the contents of door B (cannot reveal door C because of Rule 3)
-   * Contestant does not switch: *LOSER*
-   * Contestant switches to door C (only remaining door): **WINNER**
+     * Contestant does not switch: *LOSER*
+     * Contestant switches to door C (only remaining door): **WINNER**
 
 
-Success rate for not switching: 1/3
-
-Success rate for switching: 2/3
+**Success rate for not switching: 1/3**
+**Success rate for switching: 2/3**
 
 ∴ the contestant is twice as likely to win if they switch doors.
 
-Run the python script to see if it's true!
+### Run the python script to see if it's true!
 
 Sample output for the lazy:
 ```python
@@ -150,4 +149,4 @@ Switch Door Success Rate: 0.66553
 
 ## Author
 
-* **Jimmy Dudley** - [Website](https://www.jimmydudley.com) - [email](dudleyj2@miamioh.edu)
+* **Jimmy Dudley** - [website](https://www.jimmydudley.com) - [email](dudleyj2@miamioh.edu) - [github](https://github.com/dudleyj2)
