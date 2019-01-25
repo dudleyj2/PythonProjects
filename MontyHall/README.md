@@ -4,9 +4,9 @@ The [Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) is a 
 show called *Let's Make a Deal* and named after it's host, Monty Hall.
 The problem was first sent in as a letter to the *American Statistician* in 1975 and its solution received notable backlash.  This was the question that was submitted:
 
-   * Suppose you're on a game show, and you're given the choice of three doors.  Behind one door is a car and behind the two others is a goat.  You pick a door, say door A, and the host, who knows what's behind the doors, opens another door, say door C, which has a goat.  He then says to you, "Do you want to switch your pick to door B?"  The million dollar question is: is it to your advantage to switch your choice to door B?
+   * Suppose you're on a game show, and you're given the choice of three doors.  Behind one door is a car and behind the two others is a goat.  You pick a door, say door A, and the host, who knows what's behind the doors, opens another door, say door C, which has a goat.  He then says to you, "Do you want to switch your pick to door B?"  Is it to your advantage to switch your choice to door B?
 
-At first, you may think the obvious - that there is no better chance if you switch your door than if you remained with your first choice, but I created this python simulation to help explain why this is not the case.  In fact, your odds are twice as likely if you were to switch to the other door than if you were to remain with your original choice!
+At first, you may think the obvious - that there is no better chance if you switch your door than if you remained with your first choice.  I created this python simulation to help explain why this is not quite the case.  In fact, your odds are twice as likely if you were to switch to the other door than if you were to remain with your original choice!
 
 ## The Rules of the Game
 It is important to remember three very important rules to this brain teaser:
@@ -33,7 +33,7 @@ The 'games' list will contain a list of binary responses for where the door is l
 doors = ["A", "B", "C"]
 games = []
 for i in range(100000):
-    # Randomly select a random door, either A, B, or C
+    # Randomly create a winning door, either A, B, or C
     winning_door = random.choice(doors)
     if winning_door == "A":
         games.append([1, 0, 0])
@@ -47,7 +47,7 @@ For simplicity of the proof, let's assume that the contestant always chooses doo
 
 
 ### Scenario 1: Contestant Does Not Switch Doors
-As stated above, we assume that the contestant chooses door A.  The game show host must then open a different door (B or C) to reveal a goat (Rules 1 and 2).  The contestant is offered to switch to the remaining door (Rule 3), but they refuse and remain with door A.
+As stated above, we assume that the contestant chooses door A.  The game show host must then open a different door (B or C) to reveal a goat (Rules 1 and 2).  The contestant is offered to switch to the remaining door (Rule 3), **but they refuse and remain with door A**.
 
 Thus, in order to find the success rate of door A, we sum the binary values located in the representation of door A for each game simulation in our 'games' list.  In other words, we add the 0 index of each game in the 'games' list because the 0 index pertains to door A.
 
@@ -114,30 +114,30 @@ If A is our first guess, then the host *must* reveal either door B or C.  There'
 The key here is that the host was not allowed to reveal the contents of what was behind door A, so it's probability of being correct remains the same as it was at the beginning of the game.
 
 ### Still Not Convinced?
-Let's try one last, involving each of the three possibilities for where the car is located and still assuming that the candidate chooses door A first.
+Let's try one last approach, involving each of the three possibilities for where the car is located and still assuming that the candidate chooses door A first.
  1. The car is behind door A
-   * Door A is chosen by the candidate
-   * The host reveals the contents of door B or C (let's say B)
-     * Contestant does not switch: **WINNER**
-     * Contestant switches to door C (only remaining door): *LOSER*
+     * Door A is chosen by the candidate
+     * The host reveals the contents of door B or C (let's say B)
+       * Contestant does not switch: **WINNER**
+       * Contestant switches to door C (only remaining door): *LOSER*
 
  2. The car is behind door B
-   * Door A is chosen by the candidate
-   * The host reveals the contents of door C (cannot reveal door B because of Rule 3)
-     * Contestant does not switch: *LOSER*
-     * Contestant switches to door B (only remaining door): **WINNER**
+     * Door A is chosen by the candidate
+     * The host reveals the contents of door C (cannot reveal door B because of Rule 3)
+       * Contestant does not switch: *LOSER*
+       * Contestant switches to door B (only remaining door): **WINNER**
 
  3. The car is behind door C
-   * Door A is chosen by the candidate
-   * The host reveals the contents of door B (cannot reveal door C because of Rule 3)
-     * Contestant does not switch: *LOSER*
-     * Contestant switches to door C (only remaining door): **WINNER**
+     * Door A is chosen by the candidate
+     * The host reveals the contents of door B (cannot reveal door C because of Rule 3)
+       * Contestant does not switch: *LOSER*
+       * Contestant switches to door C (only remaining door): **WINNER**
 
 
-**Success rate for not switching: 1/3**
-**Success rate for switching: 2/3**
+* **Success rate for not switching: 1/3**
+* **Success rate for switching: 2/3**
 
-∴ the contestant is twice as likely to win if they switch doors.
+∴ the contestant is _**twice as likely**_ to win if they switch doors.
 
 ### Run the python script to see if it's true!
 
