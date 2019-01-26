@@ -5,7 +5,7 @@ import random
 doors = ["A", "B", "C"]
 games = []
 for i in range(100000):
-    # Randomly select a random door, either A, B, or C
+    # Randomly create a winning door, either A, B, or C
     winning_door = random.choice(doors)
     if winning_door == "A":
         games.append([1, 0, 0])
