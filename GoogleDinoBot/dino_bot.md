@@ -17,6 +17,9 @@ To accomplish these tasks, three python modules were used:
  2. [Pillow](https://pillow.readthedocs.io/en/stable/) - for image processing
  3. [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/) - for controlling mouse and keyboard input
 
+## Code Walkthrough
+
+## Installing and Running
 
 ## Author
 
