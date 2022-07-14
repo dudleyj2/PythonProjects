@@ -20,3 +20,5 @@ def process_array(input_arr):
     return arr[0]
 
 print(process_array(input_arr))
+
+# this is another commit test
