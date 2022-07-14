@@ -24,3 +24,6 @@ def main():
     print(f'Day 1 Part 2: {total_fuel}')
 
 main()
+
+# this is a new commit test
+
